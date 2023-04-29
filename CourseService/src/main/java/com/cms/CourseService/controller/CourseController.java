@@ -14,18 +14,18 @@ public class CourseController {
     @Autowired
     private CourseService courseService;
 
-    @PostMapping //api/course
+    @PostMapping //cms/course
     public ResponseEntity<?> saveCourse(@RequestBody Course course) {
         return new ResponseEntity<>(courseService.saveCourse(course), HttpStatus.CREATED);
     }
 
-    @DeleteMapping("{courseId}")//api/course/{courseId}
+    @DeleteMapping("{courseId}")//cms/course/{courseId}
     public ResponseEntity<?> deleteCourse(@PathVariable Long courseId) {
         courseService.deleteCourse(courseId);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
-    @GetMapping //api/course
+    @GetMapping //cms/course
     public ResponseEntity<?> getAllCourses() {
         return ResponseEntity.ok(courseService.findAllCourses());
     }
