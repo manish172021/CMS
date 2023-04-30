@@ -10,7 +10,7 @@ import java.util.List;
 
 @FeignClient(value = "purchase-service", //microservice-application-name
         path = "cms/purchase", //pre-path for service endpoints
-        url = "${purchase.service.url}",
+        // url = "${purchase.service.url}", // commented after eureka enabled
         configuration = FeignConfiguration.class)
 public interface PurchaseServiceRequest
 {

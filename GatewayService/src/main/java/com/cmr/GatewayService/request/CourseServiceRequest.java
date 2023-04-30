@@ -8,7 +8,7 @@ import java.util.List;
 
 @FeignClient(value = "course-service"//Name of course-service application
         , path = "/cms/course"//Pre-path for course-service
-        ,url = "${course.service.url}"
+        // ,url = "${course.service.url}" // commented after eureka enabled
         ,configuration = FeignConfiguration.class
 )
 public interface CourseServiceRequest {
